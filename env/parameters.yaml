@@ -1,0 +1,14 @@
+adminUser:
+  password: vault:lordlemon/adminUser:password
+  username: admin
+dashboardAuthID: vault:lordlemon:dashboardAuthID
+dashboardAuthOrg: arcalos-dashboard
+dashboardAuthSecret: vault:lordlemon:dashboardAuthSecret
+dashboardGrpchost: dex.jx
+enableDocker: false
+pipelineUser:
+  email: jenkins-x@googlegroups.com
+  token: vault:lordlemon/pipelineUser:token
+  username: jenkins-x-bot-test
+prow:
+  hmacToken: vault:lordlemon/prow:hmacToken
