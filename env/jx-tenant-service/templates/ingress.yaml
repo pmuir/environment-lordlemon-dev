@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: jx-basic-auth
+  name: jx-tenant-service
+spec:
+  rules:
+    - host: jx-tenant-service-jx.aps-lordlemon.jxaas.io
+      http:
+        paths:
+          - backend:
+              serviceName: jx-tenant-service
+              servicePort: 80
+  tls:
+    - hosts:
+        - jx-tenant-service-jx.aps-lordlemon.jxaas.io
+      secretName: tls-aps-lordlemon-jxaas-io-p
