@@ -20,4 +20,4 @@ spec:
   tls:
     - hosts:
         - arcalosui-jx.aps-lordlemon.jxaas.io
-      secretName:tls-aps-lordlemon-jxaas-io-p
+      secretName: tls-aps-lordlemon-jxaas-io-p
