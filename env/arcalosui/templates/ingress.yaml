@@ -8,7 +8,7 @@ metadata:
   labels:
     provider: fabric8
   name: arcalosui
-  namespace: jx-staging
+  namespace: jx
 spec:
   rules:
     - host: arcalosui-jx.aps-lordlemon.jxaas.io
