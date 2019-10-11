@@ -184,7 +184,7 @@ arcalos:
   domainIssuerUsername: vault:arcalos:domain-issuer-username
   pipelineGithubUser: vault:arcalos:pipeline-github-user
   pipelineGithubToken: vault:arcalos:pipeline-github-token
-  pipelineGithubEmail: vault:tekton-weasel/arcalos:pipeline-github-email
-  gitOwner: vault:tekton-weasel/arcalos:git-owner
+  pipelineGithubEmail: vault:arcalos:pipeline-github-email
+  gitOwner: vault:arcalos:git-owner
   prowHMACToken: vault:arcalos:prow-hmac-token
   ciSA: vault:arcalos-sa:json
