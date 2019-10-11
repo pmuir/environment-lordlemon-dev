@@ -31,8 +31,8 @@ dependencies:
   repository: https://charts.cloudbees.com/cjxd/cloudbees
   version: 0.0.879
 - name: jx-tenant-service
-  repository: http://jenkins-x-chartmuseum:8080
+  repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.45
 - name: arcalosui
-  repository: http://jenkins-x-chartmuseum:8080
+  repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.43
