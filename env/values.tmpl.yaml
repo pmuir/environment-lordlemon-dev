@@ -175,3 +175,4 @@ autoUpdate:
   schedule: {{ .Requirements.autoUpdate.schedule | quote }}
   enabled: {{ .Requirements.autoUpdate.enabled }}
 {{- end }}
+
