@@ -188,3 +188,5 @@ arcalos:
   gitOwner: vault:arcalos:git-owner
   prowHMACToken: vault:arcalos:prow-hmac-token
   ciSA: vault:arcalos-sa:json
+
+basicAuth: "{{ .Parameters.adminUser.username }}:{SHA}{{ .Parameters.adminUser.password | hashPassword }}"
