@@ -170,6 +170,26 @@ ui:
     domain: "{{ .Requirements.ingress.domain }}"
     oidcIssuerUrl: "https://dex-jx.{{ .Requirements.ingress.domain }}"
 
+arcalosui:
+{{- if .Requirements.ingress.tls }}
+{{- if eq .Requirements.ingress.tls.production false }}
+  sslInsecureSkipVerify: true
+{{- end }}
+{{- end }}
+  skipExposeService: true
+  sso:
+    create: true
+    connector: google
+{{- if .Requirements.ingress.tls }}
+{{- if eq .Requirements.ingress.tls.production true }}
+    certIssuerName: letsencrypt-prod
+{{- else }}
+    certIssuerName: letsencrypt-staging
+{{- end }}
+{{- end }}
+    domain: "{{ .Requirements.ingress.domain }}"
+    oidcIssuerUrl: "https://dex-jx.{{ .Requirements.ingress.domain }}"
+
 {{- if .Requirements.autoUpdate }}
 autoUpdate:
   schedule: {{ .Requirements.autoUpdate.schedule | quote }}
