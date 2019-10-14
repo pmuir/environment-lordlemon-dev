@@ -190,5 +190,3 @@ arcalos:
   ciSA: vault:arcalos-sa:json
 
 basicAuth: "{{ .Parameters.adminUser.username }}:{SHA}{{ .Parameters.adminUser.password | hashPassword }}"
-
-jxTenantServiceDBSecret: vault:jx-tenant-db-client:sa
