@@ -7,8 +7,8 @@ dashboardAuthSecret: vault:lordlemon:dashboardAuthSecret
 dashboardGrpchost: dex.jx
 enableDocker: false
 pipelineUser:
-  email: jenkins-x@googlegroups.com
+  email: arcalos-admin@googlegroups.com
   token: vault:lordlemon/pipelineUser:token
-  username: jenkins-x-bot-test
+  username: arcalos-bot
 prow:
   hmacToken: vault:lordlemon/prow:hmacToken
