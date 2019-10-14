@@ -32,7 +32,7 @@ dependencies:
   version: 0.0.879
 - name: jx-tenant-service
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-  version: 0.0.57
+  version: 0.0.58
 - name: arcalosui
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.45
