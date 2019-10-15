@@ -5,3 +5,9 @@ dependencies:
   url: https://github.com/cloudbees/jx-tenant-service
   version: 0.0.65
   versionURL: https://github.com/cloudbees/jx-tenant-service/releases/tag/v0.0.65
+- host: github.com
+  owner: cloudbees
+  repo: arcalosui-frontend
+  url: https://github.com/cloudbees/arcalosui-frontend
+  version: 0.0.54
+  versionURL: ""
