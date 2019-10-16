@@ -5,6 +5,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/auth-type: basic
     nginx.ingress.kubernetes.io/auth-secret: basic-auth-secret
+    nginx.ingress.kubernetes.io/use-regex: "true"
   name: jx-tenant-service
 spec:
   rules:
@@ -14,6 +15,7 @@ spec:
           - backend:
               serviceName: jx-tenant-service
               servicePort: 80
+            path: /api/v1/(installation-id|domain|nameservers|version)$
   tls:
     - hosts:
         - jx-tenant-service-jx.aps-lordlemon.jxaas.io
