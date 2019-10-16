@@ -1,7 +1,7 @@
 replicaCount: 2
-parentDomain: jxaas.io
-parentProject: cb-aps-poc
-parentDNSZone: jxaas-io-parent
+parentDomain: jxaas.dev
+parentProject: arcalos-domain-name
+parentDNSZone: jxaas-dev-parent
 basicAuthPassword: vault:jx-tenant-service-ba:password
 dbUser: jx-tenant-service
 dbPassword: vault:jx-tenant-service-db:password
