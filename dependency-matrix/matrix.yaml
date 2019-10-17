@@ -9,5 +9,5 @@ dependencies:
   owner: cloudbees
   repo: arcalosui-frontend
   url: https://github.com/cloudbees/arcalosui-frontend
-  version: 0.0.60
+  version: 0.0.61
   versionURL: ""
