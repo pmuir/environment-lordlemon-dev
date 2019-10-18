@@ -6,13 +6,13 @@ dashboardAuthOrg: arcalos-dashboard
 dashboardAuthSecret: vault:lordlemon:dashboardAuthSecret
 dashboardGrpchost: dex.jx
 enableDocker: false
+parentDNSZone: jxaas-dev-parent
+parentDomain: jxaas.dev
+parentProject: arcalos-domain-name
 pipelineUser:
   email: arcalos-admin@googlegroups.com
   token: vault:lordlemon/pipelineUser:token
   username: arcalos-bot
 prow:
   hmacToken: vault:lordlemon/prow:hmacToken
-parentDomain: jxaas.dev
-parentProject: arcalos-domain-name
-parentDNSZone: jxaas-dev-parent
-tenantServiceDBInstance: "arcalos-tenant-service-db:us-east1:jx-tenant-db=tcp:5432"
+tenantServiceDBInstance: arcalos-tenant-service-db:us-east1:jx-tenant-db=tcp:5432
