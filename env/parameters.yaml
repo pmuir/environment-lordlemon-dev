@@ -12,3 +12,7 @@ pipelineUser:
   username: arcalos-bot
 prow:
   hmacToken: vault:lordlemon/prow:hmacToken
+parentDomain: jxaas.dev
+parentProject: arcalos-domain-name
+parentDNSZone: jxaas-dev-parent
+tenantServiceDBInstance: "arcalos-tenant-service-db:us-east1:jx-tenant-db=tcp:5432"

@@ -1,9 +1,0 @@
-replicaCount: 2
-skipExposeService: true
-sso:
-  create: true
-  connector: google
-  certIssuerName: letsencrypt-prod
-  domain: "aps-lordlemon.jxaas.io"
-  oidcIssuerUrl: "https://dex-jx.aps-lordlemon.jxaas.io"
-roxApiKey: vault:rox:api-key
