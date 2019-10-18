@@ -10,7 +10,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: sso-jenkins-x-ui
+          serviceName: jx-tenant-service
           servicePort: 80
         path: /api/v1/(installation-id|domain|nameservers|version)$
 {{- if .Values.cluster.tls }}
