@@ -12,4 +12,4 @@ dbInstance: {{ .Parameters.tenantServiceDBInstance }}
 service:
   serviceAnnotations:
     fabric8.io/expose: "false"
-    fabric8.io/exposeUrl: https://jx-tenant-service-{{ .Requirements.ingress.namespaceSubDomain }}.{{ .Requirements.ingress.domain }}
+    fabric8.io/exposeUrl: https://jx-tenant-service{{ .Requirements.ingress.namespaceSubDomain }}{{ .Requirements.ingress.domain }}
