@@ -7,3 +7,7 @@ sso:
   domain: "{{ .Requirements.ingress.domain }}"
   oidcIssuerUrl: "https://dex{{ .Requirements.ingress.namespaceSubDomain }}{{ .Requirements.ingress.domain }}"
 roxApiKey: vault:rox:api-key
+service:
+  serviceAnnotations:
+    fabric8.io/expose: "false"
+    fabric8.io/exposeUrl: https://arcalosui{{ .Requirements.ingress.namespaceSubDomain }}{{ .Requirements.ingress.domain }}
