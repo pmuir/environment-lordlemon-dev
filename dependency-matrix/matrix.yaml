@@ -11,3 +11,9 @@ dependencies:
   url: https://github.com/cloudbees/arcalosui-frontend
   version: 0.0.61
   versionURL: ""
+- host: github.com
+  owner: cloudbees
+  repo: lighthouse-githubapp
+  url: https://github.com/cloudbees/lighthouse-githubapp
+  version: 0.0.2
+  versionURL: https://github.com/cloudbees/lighthouse-githubapp/releases/tag/v0.0.2
