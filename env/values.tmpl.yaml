@@ -182,7 +182,7 @@ arcalos:
   dashboardAuthSecret: vault:arcalos:dashboard-auth-secret # pragma: allowlist secret
   domainIssuerPassword: vault:arcalos:domain-issuer-password # pragma: allowlist secret
   domainIssuerUsername: vault:arcalos:domain-issuer-username
-  domainIssuerUrl: "https://jx-tenant-service-jx.aps-lordlemon.jxaas.io"
+  domainIssuerUrl: "https://jx-tenant-service-{{ .Requirements.ingress.namespaceSubDomain | default ".jx." }}.{{ .Requirements.ingress.domain }}"
   pipelineGithubUser: vault:arcalos:pipeline-github-user
   pipelineGithubToken: vault:arcalos:pipeline-github-token
   pipelineGithubEmail: vault:arcalos:pipeline-github-email
