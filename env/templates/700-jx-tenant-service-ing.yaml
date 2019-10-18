@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-  name: ui
+  name: jx-tenant-service
 spec:
   rules:
   - host: jx-tenant-service{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
