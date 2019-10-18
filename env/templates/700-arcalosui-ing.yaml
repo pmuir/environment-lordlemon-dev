@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-  name: ui
+  name: arcalosui
 spec:
   rules:
   - host: arcalosui{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
