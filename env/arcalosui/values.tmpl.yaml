@@ -5,5 +5,5 @@ sso:
   connector: google
   certIssuerName: letsencrypt-prod
   domain: "{{ .Requirements.ingress.domain }}"
-  oidcIssuerUrl: "https://dex-{{ .Requirements.ingress.namespaceSubDomain }}.{{ .Requirements.ingress.domain }}"
+  oidcIssuerUrl: "https://dex{{ .Requirements.ingress.namespaceSubDomain }}{{ .Requirements.ingress.domain }}"
 roxApiKey: vault:rox:api-key

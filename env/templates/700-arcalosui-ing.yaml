@@ -10,7 +10,7 @@ spec:
     http:
       paths:
         - backend:
-            serviceName: sso-jenkins-x-ui
+            serviceName: sso-jenkins-x-arcalosui
             servicePort: 80
 {{- if .Values.cluster.tls }}
   tls:
