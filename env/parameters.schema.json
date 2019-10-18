@@ -80,7 +80,23 @@
     "dashboardAuthOrg": {	
       "type": "string",	
       "title": "Dashboard auth org"	
-    },	
+    },
+    "parentDomain": {
+      "type": "string",
+      "title": "Registered domain the tenant service will use to create consumers"
+    },
+    "parentProject": {
+      "type": "string",
+      "title": "GCP project used to manage the parentDomain"
+    },
+    "parentDNSZone": {
+      "type": "string",
+      "title": "DNS Zone resource used to manage the parentDomain"
+    },
+    "tenantServiceDBInstance": {
+      "type": "string",
+      "title": "Instance string to connect cloud sql proxy to tenant service db"
+    },
     "dashboardGrpchost": {	
       "type": "string",	
       "title": "Dex GRPC Host",	

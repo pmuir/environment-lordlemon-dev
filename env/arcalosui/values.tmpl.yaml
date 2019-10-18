@@ -1,0 +1,9 @@
+replicaCount: 2
+skipExposeService: true
+sso:
+  create: true
+  connector: google
+  certIssuerName: letsencrypt-prod
+  domain: "{{ .Requirements.ingress.domain }}"
+  oidcIssuerUrl: "https://dex-{{ .Values.cluster.namespaceSubDomain }}.{{ .Requirements.ingress.domain }}"
+roxApiKey: vault:rox:api-key

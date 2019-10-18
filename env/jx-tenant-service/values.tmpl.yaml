@@ -1,15 +1,15 @@
 replicaCount: 2
-parentDomain: jxaas.dev
-parentProject: arcalos-domain-name
-parentDNSZone: jxaas-dev-parent
+parentDomain: {{ .Parameters.parentDomain }}
+parentProject: {{ .Parameters.parentProject}}
+parentDNSZone: {{ .Parameters.parentDNSZone}}
 basicAuthPassword: vault:jx-tenant-service-ba:password
 dbUser: jx-tenant-service
 dbPassword: vault:jx-tenant-service-db:password
 cloudSQLSA: vault:jx-tenant-db-client:sa
 sa: vault:jx-tenant-service-sa:json
 saasSA: vault:jx-tenant-service-saas-sa:json
-dbInstance: arcalos-tenant-service-db:us-east1:jx-tenant-db=tcp:5432
+dbInstance: {{ .Parameters.tenantServiceDBInstance }}
 service:
   serviceAnnotations:
     fabric8.io/expose: "false"
-    fabric8.io/exposeUrl: https://jx-tenant-service-jx.aps-lordlemon.jxaas.io
+    fabric8.io/exposeUrl: https://jx-tenant-service-{{ .Values.cluster.namespaceSubDomain }}.{{ .Requirements.ingress.domain }}

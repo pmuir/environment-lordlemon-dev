@@ -6,16 +6,17 @@ metadata:
   name: ui
 spec:
   rules:
-  - host: arcalosui{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
+  - host: jx-tenant-service{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
     http:
       paths:
-        - backend:
-            serviceName: sso-jenkins-x-ui
-            servicePort: 80
+      - backend:
+          serviceName: sso-jenkins-x-ui
+          servicePort: 80
+        path: /api/v1/(installation-id|domain|nameservers|version)$
 {{- if .Values.cluster.tls }}
   tls:
   - hosts:
-      - arcalosui{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
+    - jx-tenant-service{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
 {{- if eq .Values.certmanager.production "true" }}
     secretName: "tls-{{ .Values.cluster.domain | replace "." "-" }}-p"
 {{- else }}
