@@ -3,7 +3,6 @@ autoUpdate:
   schedule: 0 0 * * *
 bootConfigURL: https://github.com/cloudbees/arcalos-boot-config.git
 cluster:
-  azure: {}
   clusterName: lordlemon
   environmentGitOwner: jenkins-x-bot-test
   environmentGitPublic: true
@@ -22,8 +21,7 @@ cluster:
 environments:
 - ingress:
     cloud_dns_secret_name: external-dns-gcp-sa
-    domain: aps-lordlemon.jxaas.io
-    domainIssuerURL: https://jx-tenant-service-jx-staging.jenkins-x.live
+    domain: aps-lordlemon.jxaas.live
     externalDNS: true
     namespaceSubDomain: -jx.
     tls:
