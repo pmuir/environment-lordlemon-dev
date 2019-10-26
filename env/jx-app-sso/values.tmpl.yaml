@@ -1,4 +1,4 @@
-{{- $rootDomain := trimPrefix .Requirements.cluster.project .Requirements.ingress.domain }}
+{{- $rootDomain := trimPrefix "{{ .Values.cluster.projectID }}." .Values.cluster.domain }}
 sso-operator:
   dex:
     grpcHost: "dex.jx"

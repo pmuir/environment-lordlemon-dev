@@ -150,7 +150,7 @@ certmanager:
 sso:
   enabled: true
 
-{{- $rootDomain := trimPrefix .Requirements.cluster.project .Requirements.ingress.domain }}
+{{- $rootDomain := trimPrefix "{{ .Values.cluster.projectID }}." .Values.cluster.domain }}
 
 ui:
 {{- if .Requirements.ingress.tls }}

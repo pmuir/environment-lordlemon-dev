@@ -5,16 +5,20 @@ dependencies:
 - alias: tekton
   name: tekton
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
+  version: 0.0.42
 - alias: prow
   condition: prow.enabled
   name: prow
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
+  version: 0.0.1344
 - alias: lighthouse
   condition: lighthouse.enabled
   name: lighthouse
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
+  version: 0.0.157
 - name: jenkins-x-platform
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
+  version: 2.0.1376
 - name: jx-app-sso
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.19
