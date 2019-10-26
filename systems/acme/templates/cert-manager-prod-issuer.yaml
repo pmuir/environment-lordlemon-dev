@@ -33,7 +33,7 @@ spec:
         dnsNames:
 {{- range .domains }}
         - {{ . | quote }}
-{{- end}}
+{{- end }}
       # ACME DNS-01 provider configurations
       dns01:
         clouddns:

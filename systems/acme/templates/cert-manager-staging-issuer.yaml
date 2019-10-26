@@ -25,14 +25,14 @@ spec:
           serviceAccountSecretRef:
             name: external-dns-gcp-sa
             key: credentials.json
-{- if hasKey .Values "additionalSolvers" }}
+{{- if hasKey .Values "additionalSolvers" }}
 {{- $defaultProjectID := .Values.cluster.projectID -}}
 {{- range .Values.additionalSolvers }}
     - selector:
         dnsNames:
 {{- range .domains }}
         - {{ . | quote }}
-{{- end}}
+{{- end }}
       # ACME DNS-01 provider configurations
       dns01:
         clouddns:
@@ -46,4 +46,3 @@ spec:
 {{- end }}
 {{- end }}
 {{- end }}
-
