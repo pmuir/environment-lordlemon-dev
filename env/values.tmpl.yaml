@@ -150,6 +150,8 @@ certmanager:
 sso:
   enabled: true
 
+{{- $rootDomain := trimPrefix .Requirements.cluster.project .Requirements.ingress.domain }}
+
 ui:
 {{- if .Requirements.ingress.tls }}
 {{- if eq .Requirements.ingress.tls.production false }}
@@ -167,8 +169,8 @@ ui:
     certIssuerName: letsencrypt-staging
 {{- end }}
 {{- end }}
-    domain: "{{ .Requirements.ingress.domain }}"
-    oidcIssuerUrl: "https://dex-jx.{{ .Requirements.ingress.domain }}"
+    domain: {{ $rootDomain | quote }}
+    oidcIssuerUrl: "https://dex-jx.{{ $rootDomain }}"
 
 {{- if .Requirements.autoUpdate }}
 autoUpdate:

@@ -1,4 +1,4 @@
-{{- if .Values.certmanager.enabled }}
+{{- if (hasKey .Values "certmanager") and .Values.certmanager.enabled }}
 {{- if eq .Values.certmanager.production "false" }}
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Issuer
@@ -25,6 +25,25 @@ spec:
           serviceAccountSecretRef:
             name: external-dns-gcp-sa
             key: credentials.json
+{- if hasKey .Values "additionalSolvers" }}
+{{- $defaultProjectID := .Values.cluster.projectID -}}
+{{- range .Values.additionalSolvers }}
+    - selector:
+        dnsNames:
+{{- range .domains }}
+        - {{ . | quote }}
+{{- end}}
+      # ACME DNS-01 provider configurations
+      dns01:
+        clouddns:
+          # The project in which to update the DNS zone
+          project: "{{ .projectID | default $defaultProjectID }}"
+          # A secretKeyRef to a google cloud json service account
+          serviceAccountSecretRef:
+            name: {{ .serviceAccountSecretRef | default "external-dns-gcp-sa" }}
+            key: credentials.json
+{{- end }}
+{{- end }}
 {{- end }}
 {{- end }}
 

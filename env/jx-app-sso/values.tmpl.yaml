@@ -1,8 +1,9 @@
+{{- $rootDomain := trimPrefix .Requirements.cluster.project .Requirements.ingress.domain }}
 sso-operator:
   dex:
     grpcHost: "dex.jx"
 dex:
-  domain: "dex-jx.{{ .Requirements.ingress.domain }}"
+  domain: "dex-jx.{{ $rootDomain }}"
   connectors:
     google:
       config:

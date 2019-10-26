@@ -1,4 +1,4 @@
-{{- if .Values.certmanager.enabled }}
+{{- if (hasKey .Values "certmanager") and .Values.certmanager.enabled }}
 {{- if eq .Values.certmanager.production "false" }}
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
@@ -11,5 +11,12 @@ spec:
   commonName: "*.{{ .Values.cluster.domain }}"
   dnsNames:
   - "*.{{ .Values.cluster.domain }}"
+{{- if hasKey .Values "additionalSolvers" }}
+{{- range .Values.additionalSolvers }}
+{{- range .domains }}
+  - {{ . | quote }}
+{{- end }}
+{{- end }}
+{{- end }}
 {{- end }}
 {{- end }}

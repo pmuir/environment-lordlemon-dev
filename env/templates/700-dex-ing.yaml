@@ -1,4 +1,5 @@
 {{- if .Values.sso.enabled }}
+{{- $rootDomain := trimPrefix .Values.cluster.projectID .Values.cluster.namespaceSubDomain }}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -7,6 +8,12 @@ metadata:
   name: dex
 spec:
   rules:
+  - host: dex{{ .Values.cluster.namespaceSubDomain }}{{ $rootDomain }}
+    http:
+      paths:
+      - backend:
+          serviceName: dex
+          servicePort: 80
   - host: dex{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
     http:
       paths:
@@ -17,6 +24,7 @@ spec:
   tls:
   - hosts:
     - dex{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
+    - dex{{ .Values.cluster.namespaceSubDomain }}{{ $rootDomain }}
 {{- if eq .Values.certmanager.production "true" }}
     secretName: "tls-{{ .Values.cluster.domain | replace "." "-" }}-p"
 {{- else }}
