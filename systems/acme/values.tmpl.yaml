@@ -1,3 +1,5 @@
+{{- $rootDomain := trimPrefix .Requirements.cluster.project .Requirements.ingress.domain }}
+{{- $namespaceSubDomain := .Requirements.ingress.namespaceSubDomain | default ".jx." }}
 cluster:
   domain: {{ .Requirements.ingress.domain }}
 {{- if hasKey .Requirements.cluster "project" }}
@@ -12,3 +14,17 @@ certmanager:
   email:  "{{ .Requirements.ingress.tls.email }}"
   enabled: {{ .Requirements.ingress.tls.enabled }}
 {{- end }}
+
+# Add additional solvers to issue certificates for other domains. They must be delegated to the project
+#additionalSolvers:
+#- domains:
+#  - "mydomain.com"
+#  - "www.mydomain.com"
+#  projectID: my-gcp-project # by default the GCP project owning the cluster
+#  serviceAccountSecretRef: my-secret # by default external-dns-gcp-sa
+
+additionalSolvers:
+- domains:
+  - "dashboard.{{ $rootDomain }}"
+  - "dex-{{ $namespaceSubDomain }}.{{ $rootDomain }}"
+  projectID: arcalos-domain-name

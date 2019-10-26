@@ -1,3 +1,4 @@
+{{- $rootDomain := trimPrefix .Values.cluster.projectID .Values.cluster.namespaceSubDomain }}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -6,6 +7,13 @@ metadata:
   name: arcalosui
 spec:
   rules:
+  # This domain MUST be first as the oauth proxy uses the first domain in the list to work out it's redirect url
+  - host: dashboard.{{ $rootDomain }}
+    http:
+      paths:
+        - backend:
+            serviceName: sso-jenkins-x-arcalosui
+            servicePort: 80
   - host: arcalosui{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
     http:
       paths:
@@ -15,6 +23,7 @@ spec:
 {{- if .Values.cluster.tls }}
   tls:
   - hosts:
+      - dashboard.{{ $rootDomain }}
       - arcalosui{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
 {{- if eq .Values.certmanager.production "true" }}
     secretName: "tls-{{ .Values.cluster.domain | replace "." "-" }}-p"
