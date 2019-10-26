@@ -12,7 +12,12 @@ pipelineConfig:
             - build
             command: make
             dir: /workspace/source/env
-            name: helm-build
+            name: helm-build-env
+          - args:
+            - build
+            command: make
+            dir: /workspace/source/systems/acme
+            name: helm-build-systems-acme
     release:
       pipeline:
         agent:
