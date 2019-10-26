@@ -11,7 +11,7 @@ pipelineConfig:
           - args:
             - build
             command: make
-            dir: /workspace/source/env
+            dir: /workspace/source
             name: helm-build
     release:
       pipeline:
