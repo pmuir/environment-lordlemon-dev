@@ -1,4 +1,5 @@
-{{- $rootDomain := trimPrefix .Requirements.cluster.project .Requirements.ingress.domain }}
+{{- $prefix := printf "%s." .Requirements.cluster.project }}
+{{- $rootDomain := trimPrefix $prefix .Requirements.ingress.domain }}
 replicaCount: 2
 skipExposeService: true
 sso:

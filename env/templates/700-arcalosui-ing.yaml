@@ -1,4 +1,5 @@
-{{- $rootDomain := trimPrefix .Values.cluster.projectID .Values.cluster.domain }}
+{{- $prefix := printf "%s." .Values.cluster.projectID }}
+{{- $rootDomain := trimPrefix $prefix .Values.cluster.domain }}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
