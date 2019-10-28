@@ -8,6 +8,8 @@ dbPassword: vault:jx-tenant-service-db:password
 cloudSQLSA: vault:jx-tenant-db-client:sa
 sa: vault:jx-tenant-service-sa:json
 saasSA: vault:jx-tenant-service-saas-sa:json
+cert: vault:lh-github-app:cert
+id: vault:lh-github-app:id
 dbInstance: {{ .Parameters.tenantServiceDBInstance }}
 service:
   serviceAnnotations:

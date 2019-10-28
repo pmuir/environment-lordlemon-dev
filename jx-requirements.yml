@@ -3,7 +3,7 @@ autoUpdate:
   schedule: 0 0 * * *
 bootConfigURL: https://github.com/cloudbees/arcalos-boot-config.git
 cluster:
-  azure: {}
+  # azure: {}
   clusterName: lordlemon
   environmentGitOwner: jenkins-x-bot-test
   environmentGitPublic: true
