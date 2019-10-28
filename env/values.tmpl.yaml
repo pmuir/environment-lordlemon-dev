@@ -12,7 +12,7 @@ cluster:
 {{- else }}
   zone: ""
 {{- end }}
-  name: ""
+  name: "{{ .Requirements.cluster.clusterName }}"
   serverUrl: ""
 {{- if .Requirements.ingress.tls.enabled }}
   tls: true

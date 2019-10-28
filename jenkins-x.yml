@@ -33,6 +33,10 @@ pipelineConfig:
           value: arcalos-bot
         - name: GIT_COMMITTER_EMAIL
           value: arcalos-admin@googlegroups.com
+        - name: GIT_COMMITTER_NAME
+          value: arcalos-bot
+        - name: GIT_COMMITTER_EMAIL
+          value: arcalos-admin@googlegroups.com
         stages:
         - name: release
           steps:
