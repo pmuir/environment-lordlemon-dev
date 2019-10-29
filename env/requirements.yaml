@@ -35,4 +35,4 @@ dependencies:
   version: 0.0.879
 - name: jx-tenant-service
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-  version: 0.0.122
+  version: 0.0.132

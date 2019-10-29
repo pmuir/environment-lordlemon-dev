@@ -11,6 +11,7 @@ saasSA: vault:jx-tenant-service-saas-sa:json
 cert: vault:lh-github-app:cert
 id: vault:lh-github-app:id
 dbInstance: {{ .Parameters.tenantServiceDBInstance }}
+tenantFolderID: "309177572729"
 service:
   serviceAnnotations:
     fabric8.io/expose: "false"
