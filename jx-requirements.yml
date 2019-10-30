@@ -10,8 +10,6 @@ cluster:
   gitKind: github
   gitName: github
   gitServer: https://github.com
-  gke:
-    projectNumber: "1056328785145"
   kanikoSAName: lordlemon-ko
   namespace: jx
   project: aps-lordlemon

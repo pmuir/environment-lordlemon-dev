@@ -12,4 +12,4 @@ dex:
         name: Google
         clientID: "{{ .Parameters.dashboardAuthID }}"
         clientSecret: "{{ .Parameters.dashboardAuthSecret }}"
-        issuer: https://accounts.google.com
+        issuer: https://id.cloudbees.com/
